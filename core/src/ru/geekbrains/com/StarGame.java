@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class StarGame extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
-	int a = 0;
+	private SpriteBatch batch;
+	private Texture img;
+	private int a = 1;
 	
 	@Override
 	public void create () {
