@@ -27,7 +27,6 @@ public class MenuScreen extends BaseScreen {
         ship = new Texture("spaceship3.png");
         pos = new Vector2(250 - shipCenterX, 50 - shipCenterY);
         v = new Vector2();
-        touchDown = new Vector2();
         endPos = new Vector2();
         speed = new Vector2();
 
@@ -55,13 +54,9 @@ public class MenuScreen extends BaseScreen {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        //pos.set(screenX-41, Gdx.graphics.getHeight() - screenY-31);
         endPos.set(screenX - shipCenterX,  Gdx.graphics.getHeight() - screenY - shipCenterY);
-        System.out.println(pos);
-        System.out.println(endPos);
         speed.set(endPos.cpy().sub(pos));
-        float gip = (float) Math.sqrt(speed.x * speed.x + speed.y * speed.y);
-        v.set(speed.x/gip, speed.y/gip);
+        v.set(speed.x/speed.len(), speed.y/speed.len());
         return false;
     }
 
